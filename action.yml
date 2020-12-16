@@ -44,8 +44,8 @@ runs:
     - ${{ inputs.openshift }}
     - ${{ inputs.ignore_missing_schemas }}
     - ${{ inputs.comment }}
-    - ${{ inputs.token }}
     - ${{ inputs.ignored_filename_patterns }}
+    - ${{ inputs.token }}
 branding:
   icon: "check"
   color: "blue"
