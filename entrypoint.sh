@@ -28,7 +28,7 @@ cd ${GITHUB_WORKSPACE}/${WORKING_DIR}
 set +e
 
 # exec kubeval
-CMD="/kubeval --directories ${FILES} --output stdout --strict=${STRICT} --kubernetes-version=${VERSION} --openshift=${OPENSHIFT} --ignore-missing-schemas=${IGNORE_MISSING_SCHEMAS} --ignored-filename-patterns=${IGNORE_FILENAME_PATTERNS}"
+CMD="/kubeval --directories ${FILES} --output stdout --strict=${STRICT} --kubernetes-version=${VERSION} --openshift=${OPENSHIFT} --ignore-missing-schemas=${IGNORE_MISSING_SCHEMAS} --ignored-filename-patterns=${IGNORED_FILENAME_PATTERNS}"
 OUTPUT=$(sh -c "${CMD}" 2>&1)
 SUCCESS=$?
 
