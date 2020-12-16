@@ -27,20 +27,20 @@ jobs:
         with:
           files: dir1,dir2
           token: ${{ secrets.GITHUB_TOKEN }}
+          ignored_filename_patterns: .github/workflow/action.yaml,file2.yaml
+
 ```
 
 ### Input parameters
 
-| Parameter                | Description                                                      | Default  |
-| ------------------------ | ---------------------------------------------------------------- | -------- |
-| `files`                  | Files or directories to validate                                 | `.`      |
-| `version`                | Version of Kubernetes to validate against                        | `master` |
-| `strict`                 | Whether to not to check for extra properties                     | `true`   |
-| `openshift`              | Whether to use the schemas from OpenShift rather than Kubernetes | `false`  |
-| `ignore_missing_schemas` | Whether or not to skip custom resources                          | `true`   |
-| `comment`                | Write validation details to pull request comments                | `true`   |
-| `token`                  | Github token for api. This is required if `comment` is true      | `""`     |
+| Parameter                   | Description                                                                   | Default  |
+| --------------------------- | ----------------------------------------------------------------------------- | -------- |
+| `files`                     | Files or directories to validate                                              | `.`      |
+| `version`                   | Version of Kubernetes to validate against                                     | `master` |
+| `strict`                    | Whether to not to check for extra properties                                  | `true`   |
+| `openshift`                 | Whether to use the schemas from OpenShift rather than Kubernetes              | `false`  |
+| `ignore_missing_schemas`    | Whether or not to skip custom resources                                       | `true`   |
+| `comment`                   | Write validation details to pull request comments                             | `true`   |
+| `token`                     | Github token for api. This is required if `comment` is true                   | `""`     |
+| `ignored_filename_patterns` | A comma-separated list of regular expressions specifying filenames to ignore  | `""`     |
 
-_NOTICE_: Currently kubeval does not support to ignore specify files in the target directories.
-So when you set the `files` parameter to "."(default),
-your action would say "ERR  - .github/workflows/your_action.yml: Missing 'kind' key".😥

@@ -1,4 +1,4 @@
-FROM garethr/kubeval:0.14.0 AS kubeval
+FROM annjlo/kubeval:0.15.0 AS kubeval
 
 FROM makocchi/alpine-curl-jq:latest
 

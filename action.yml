@@ -30,6 +30,10 @@ inputs:
     description: "Github token for api. This is required if comment is true"
     default: ""
     required: false
+  ignored_filename_patterns:
+    description: "A comma-separated list of regular expressions specifying filenames to ignore" 
+    default: ""
+    required: false
 runs:
   using: "docker"
   image: "Dockerfile"
@@ -41,6 +45,7 @@ runs:
     - ${{ inputs.ignore_missing_schemas }}
     - ${{ inputs.comment }}
     - ${{ inputs.token }}
+    - ${{ inputs.ignored_filename_patterns }}
 branding:
   icon: "check"
   color: "blue"
