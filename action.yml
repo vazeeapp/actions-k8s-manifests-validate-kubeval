@@ -30,8 +30,8 @@ inputs:
     description: "Github token for api. This is required if comment is true"
     default: ""
     required: false
-  ignored_filename_patterns:
-    description: "A comma-separated list of regular expressions specifying filenames to ignore" 
+  ignored_path_patterns:
+    description: "A comma-separated list of regular expressions specifying paths to ignore"
     default: ""
     required: false
 runs:
@@ -44,7 +44,7 @@ runs:
     - ${{ inputs.openshift }}
     - ${{ inputs.ignore_missing_schemas }}
     - ${{ inputs.comment }}
-    - ${{ inputs.ignored_filename_patterns }}
+    - ${{ inputs.ignored_path_patterns }}
     - ${{ inputs.token }}
 branding:
   icon: "check"
