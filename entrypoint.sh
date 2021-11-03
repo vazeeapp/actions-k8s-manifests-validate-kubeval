@@ -12,7 +12,8 @@ OPENSHIFT=$4
 IGNORE_MISSING_SCHEMAS=$5
 COMMENT=$6
 IGNORED_PATH_PATTERNS=$7
-GITHUB_TOKEN=$8
+SCHEMA_LOCATION=$8
+GITHUB_TOKEN=$9
 
 # ------------------------
 # Vars
@@ -28,7 +29,7 @@ cd ${GITHUB_WORKSPACE}/${WORKING_DIR}
 set +e
 
 # exec kubeval
-CMD="/kubeval --directories ${FILES} --output stdout --strict=${STRICT} --kubernetes-version=${VERSION} --openshift=${OPENSHIFT} --ignore-missing-schemas=${IGNORE_MISSING_SCHEMAS} --ignored-filename-patterns=${IGNORED_PATH_PATTERNS}"
+CMD="/kubeval --directories ${FILES} --output stdout --strict=${STRICT} --kubernetes-version=${VERSION} --openshift=${OPENSHIFT} --ignore-missing-schemas=${IGNORE_MISSING_SCHEMAS} --ignored-filename-patterns=${IGNORED_PATH_PATTERNS} --schema-location=${SCHEMA_LOCATION}"
 OUTPUT=$(sh -c "${CMD}" 2>&1)
 SUCCESS=$?
 

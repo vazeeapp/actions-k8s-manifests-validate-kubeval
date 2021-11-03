@@ -33,13 +33,14 @@ jobs:
 
 ### Input parameters
 
-| Parameter                | Description                                                               | Default  |
-| ------------------------ | ------------------------------------------------------------------------- | -------- |
-| `files`                  | Files or directories to validate                                          | `.`      |
-| `version`                | Version of Kubernetes to validate against                                 | `master` |
-| `strict`                 | Whether to not to check for extra properties                              | `true`   |
-| `openshift`              | Whether to use the schemas from OpenShift rather than Kubernetes          | `false`  |
-| `ignore_missing_schemas` | Whether or not to skip custom resources                                   | `true`   |
-| `comment`                | Write validation details to pull request comments                         | `true`   |
-| `token`                  | Github token for api. This is required if `comment` is true               | `""`     |
-| `ignored_path_patterns`  | A comma-separated list of regular expressions specifying paths to ignore  | `""`     |
+| Parameter                | Description                                                               | Default                                                                   |
+| ------------------------ | ------------------------------------------------------------------------- | --------                                                                  |
+| `files`                  | Files or directories to validate                                          | `.`                                                                       |
+| `version`                | Version of Kubernetes to validate against                                 | `master`                                                                  |
+| `strict`                 | Whether to not to check for extra properties                              | `true`                                                                    |
+| `openshift`              | Whether to use the schemas from OpenShift rather than Kubernetes          | `false`                                                                   |
+| `ignore_missing_schemas` | Whether or not to skip custom resources                                   | `true`                                                                    |
+| `comment`                | Write validation details to pull request comments                         | `true`                                                                    |
+| `token`                  | Github token for api. This is required if `comment` is true               | `""`                                                                      |
+| `ignored_path_patterns`  | A comma-separated list of regular expressions specifying paths to ignore  | `""`                                                                      |
+| `schema_location`        | Base URL used to download schemas                                         | `"https://raw.githubusercontent.com/yannh/kubernetes-json-schema/master"` |

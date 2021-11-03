@@ -34,6 +34,10 @@ inputs:
     description: "A comma-separated list of regular expressions specifying paths to ignore"
     default: ""
     required: false
+  schema_location:
+    description: "Base URL used to download schemas"
+    default: "https://raw.githubusercontent.com/yannh/kubernetes-json-schema/master"
+    required: false
 runs:
   using: "docker"
   image: "Dockerfile"
@@ -45,6 +49,7 @@ runs:
     - ${{ inputs.ignore_missing_schemas }}
     - ${{ inputs.comment }}
     - ${{ inputs.ignored_path_patterns }}
+    - ${{ inputs.schema_location }}
     - ${{ inputs.token }}
 branding:
   icon: "check"
