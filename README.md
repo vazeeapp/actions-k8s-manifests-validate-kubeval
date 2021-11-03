@@ -1,9 +1,9 @@
 # Validate Kubernetes manifests by kubeval
 
-[<img src="https://github.com/makocchi-git/actions-k8s-manifests-validate-kubeval/workflows/Perform checks/badge.svg"/>](https://github.com/makocchi-git/actions-k8s-manifests-validate/actions)
+[<img src="https://github.com/vazeeapp/actions-k8s-manifests-validate-kubeval/workflows/Perform checks/badge.svg"/>](https://github.com/vazeeapp/actions-k8s-manifests-validate-kubeval/actions)
 
 Validate [Kubernetes](https://github.com/kubernetes/kubernetes) manifests in your repository.  
-This action uses [Kubeval](https://kubeval.instrumenta.dev/) for validating.
+This action uses [Kubeval](https://www.kubeval.com/) for validating.
 
 <img src="./img/check.png" alt="sample comment" width="80%" />
 
@@ -23,7 +23,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: validate manifests in dir1 and dir2
-        uses: andloh/actions-k8s-manifests-validate-kubeval@1.0.6
+        uses: vazeeapp/actions-k8s-manifests-validate-kubeval@master
         with:
           files: dir1,dir2
           token: ${{ secrets.GITHUB_TOKEN }}
@@ -43,4 +43,3 @@ jobs:
 | `comment`                | Write validation details to pull request comments                         | `true`   |
 | `token`                  | Github token for api. This is required if `comment` is true               | `""`     |
 | `ignored_path_patterns`  | A comma-separated list of regular expressions specifying paths to ignore  | `""`     |
-
